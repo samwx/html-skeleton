@@ -1,0 +1,22 @@
+{
+  "name": "html-skeleton",
+  "version": "0.0.1",
+  "description": "A base to start your front-end project using grunt",
+  "homepage": "http://samweb.com.br",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/samwx/html-skeleton"
+  },
+  "engines": {
+    "node": "0.8.x",
+    "npm": "1.1.x"
+  },
+  "dependencies": {
+    "grunt-cli": "0.1.6",
+    "grunt": "~0.4.0",
+    "grunt-yui-compressor": "0.2.1",
+    "grunt-rsync": "~0.1.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-clean": "~0.4.1"
+  }
+}
