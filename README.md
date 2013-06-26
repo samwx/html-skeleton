@@ -13,4 +13,4 @@ Base structure for front end project together with the grunt
 ## Features
 
 * Grunt ready.
-* Comes with [https://github.com/pinceladasdaweb/tweetlight](Tweetlight) for display your last tweets.
+* Comes with [Tweetlight](https://github.com/pinceladasdaweb/tweetlight) for display your last tweets.
