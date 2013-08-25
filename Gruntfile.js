@@ -40,7 +40,8 @@ module.exports = function(grunt) {
 				src: [css_path + 'all.css'],
 				dest: css_path + 'all.min.css'
 			}
-		}
+		},
+
 	};
 
 	grunt.initConfig(gruntConfig);
