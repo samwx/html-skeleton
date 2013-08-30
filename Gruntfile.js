@@ -42,6 +42,17 @@ module.exports = function(grunt) {
 			}
 		},
 
+		watch: {
+			css: {
+				files: [ css_path + '*.css' ],
+				tasks: ['css']
+			},
+			js: {
+				files: [ js_path + '*.js' ],
+				tasks: ['js']
+			}
+		}
+
 	};
 
 	grunt.initConfig(gruntConfig);
@@ -56,6 +67,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-yui-compressor');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	grunt.registerTask('css', ['clean:css', 'concat:css', 'cssmin']); // Executa tarefas relacionadas a arquivos .CSS
 	grunt.registerTask('js', ['clean:js', 'concat:js', 'min']); // Executa tarefas relacionadas apenas a arquivos .JS
