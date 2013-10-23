@@ -9,12 +9,12 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 
 		// Limpa os arquivos concatenados e minificados para não ocorrer duplicação do código
-	    clean: {
-      		css: [ css_path + 'all.css', css_path + 'all.min.css'],
-      		js: [ js_path + 'concat.js', js_path + 'concat.min.js']
-    	},
+		clean: {
+			css: [ css_path + 'all.css', css_path + 'all.min.css'],
+			js: [ js_path + 'concat.js', js_path + 'concat.min.js']
+		},
 
-    	// Concatena arquivos .js e .css da pasta definida nas configurações
+		// Concatena arquivos .js e .css da pasta definida nas configurações
 		concat: {
 			js: {
 				src: js_path + '*.js',
