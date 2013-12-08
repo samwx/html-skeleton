@@ -15,7 +15,6 @@
     "grunt-cli": "0.1.6",
     "grunt": "~0.4.0",
     "grunt-yui-compressor": "0.2.1",
-    "grunt-rsync": "~0.1.0",
     "grunt-contrib-concat": "~0.3.0",
     "grunt-contrib-clean": "~0.4.1"
   },
