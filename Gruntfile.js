@@ -2,8 +2,9 @@ module.exports = function(grunt) {
 	'use strict';
 
 	// Configurações de pastas
-	var css_path = 'assets/css/'; //pasta dos arquivos .css
-	var js_path = 'assets/js/'; //pasta dos arquivos .js
+	var css_path  = 'assets/css/'; //pasta dos arquivos .css
+	var js_path   = 'assets/js/'; //pasta dos arquivos .js
+	var less_path = 'assets/less/'; //pasta dos arquivos .less
 
 	var gruntConfig = {
 		pkg: grunt.file.readJSON('package.json'),
@@ -42,7 +43,33 @@ module.exports = function(grunt) {
 			}
 		},
 
+		validation: {
+			options : {
+				reset : true,
+				reportpath : false,
+				stoponerror : true
+			},
+			files : {
+				src : '*.html'
+			}
+		},
+
+		less: {
+			development: {
+				files: {
+					"assets/css/style.css": [less_path + 'style.less']
+				}
+			}
+		},
+
 		watch: {
+			options: {
+				livereload: true
+			},
+			less: {
+				files: [ less_path + '*.less'],
+				tasks: ['less']
+			},
 			css: {
 				files: [ css_path + '*.css' ],
 				tasks: ['css']
@@ -50,6 +77,10 @@ module.exports = function(grunt) {
 			js: {
 				files: [ js_path + '*.js' ],
 				tasks: ['js']
+			},
+			validateHTML : {
+				files : ['*.html'],
+				tasks : ['validation']
 			}
 		}
 
@@ -68,6 +99,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-html-validation');
+	grunt.loadNpmTasks('grunt-contrib-less');
 
 	grunt.registerTask('css', ['clean:css', 'concat:css', 'cssmin']); // Executa tarefas relacionadas a arquivos .CSS
 	grunt.registerTask('js', ['clean:js', 'concat:js', 'min']); // Executa tarefas relacionadas apenas a arquivos .JS
