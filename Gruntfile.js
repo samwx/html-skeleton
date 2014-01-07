@@ -101,6 +101,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-html-validation');
 	grunt.loadNpmTasks('grunt-contrib-less');
+	grunt.loadNpmTasks('grunt-notify');
 
 	grunt.registerTask('css', ['clean:css', 'concat:css', 'cssmin']); // Executa tarefas relacionadas a arquivos .CSS
 	grunt.registerTask('js', ['clean:js', 'concat:js', 'min']); // Executa tarefas relacionadas apenas a arquivos .JS
